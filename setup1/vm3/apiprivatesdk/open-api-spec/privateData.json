@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "2320cb8b-fb72-450c-8be9-21f51a052a4e",
+		"name": "Test Fabric SDK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create users ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"krishna\",\n    \"orgName\":\"Org1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invoke transaction with one private data collection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fcn\":\"InsertAssetRecords\",\n    \"args\":[\"{\\\"TransactionID\\\": \\\"00047\\\",\\\"TransactionEntity\\\": \\\"txEntity\\\",\\\"Branch\\\": \\\"Pune\\\",\\\"module\\\" : \\\"module\\\",\\\"TransactionType\\\": \\\"txType\\\",\\\"PartnerEntity\\\": \\\"SFT\\\",\\\"PartnerBranch\\\": \\\"Pune\\\",\\\"AssetID\\\": \\\"A1000\\\",\\\"OrderID\\\": \\\"NA\\\",\\\"AssetName\\\": \\\"Degree Certificate\\\",\\\"AssetLocation\\\": \\\"College\\\",\\\"AssetType\\\": \\\"Document\\\",\\\"BalanceQty\\\": \\\"0\\\",\\\"UOM\\\": \\\"uom\\\",\\\"EffectiveDate\\\": \\\"effectiveDate\\\",\\\"ExpiryDate\\\": \\\"expiryDate\\\",\\\"ReferenceAsset\\\": \\\"NA\\\",\\\"ReferenceOrder\\\": \\\"NA\\\",\\\"Status\\\":\\\"status\\\",\\\"AllValues\\\": \\\"allValues\\\", \\\"Acknowledgement\\\": \\\"ack\\\",\\\"Transaction\\\": \\\"Asset\\\"}\"],\n    \"transient\":\"{\\\"asset_properties\\\":{\\\"TransactionID\\\":\\\"00047\\\",\\\"Qty\\\":\\\"200\\\"}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/channels/mychannel/chaincodes/tacechain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"channels",
+						"mychannel",
+						"chaincodes",
+						"tacechain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invoke transaction with mutliple private data collection",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDM3NTI1ODMsInVzZXJuYW1lIjoia3Jpc2huYSIsIm9yZ05hbWUiOiJPcmcxIiwiaWF0IjoxNjQzNzE2NTgzfQ.pOaeLe1aqvIbLU6a_PF2f1QEg2cLBj1fyYRNpVg9POk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fcn\":\"InsertAssetRecords\",\n    \"args\":[\"{\\\"TransactionID\\\": \\\"00029\\\",\\\"TransactionEntity\\\": \\\"txEntity\\\",\\\"Branch\\\": \\\"Pune\\\",\\\"module\\\" : \\\"module\\\",\\\"TransactionType\\\": \\\"txType\\\",\\\"PartnerEntity\\\": \\\"SFT\\\",\\\"PartnerBranch\\\": \\\"Pune\\\",\\\"AssetID\\\": \\\"A1000\\\",\\\"OrderID\\\": \\\"NA\\\",\\\"AssetName\\\": \\\"Degree Certificate\\\",\\\"AssetLocation\\\": \\\"College\\\",\\\"AssetType\\\": \\\"Document\\\",\\\"BalanceQty\\\": \\\"0\\\",\\\"UOM\\\": \\\"uom\\\",\\\"EffectiveDate\\\": \\\"effectiveDate\\\",\\\"ExpiryDate\\\": \\\"expiryDate\\\",\\\"ReferenceAsset\\\": \\\"NA\\\",\\\"ReferenceOrder\\\": \\\"NA\\\",\\\"Status\\\":\\\"status\\\",\\\"AllValues\\\": \\\"allValues\\\", \\\"Acknowledgement\\\": \\\"ack\\\",\\\"Transaction\\\": \\\"Asset\\\"}\"],\n    \"transient\":\"{\\\"asset_properties\\\":{\\\"TransactionID\\\":\\\"00029\\\",\\\"Qty\\\":\\\"200\\\"}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/channels/mychannel/chaincodes/tacechain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"channels",
+						"mychannel",
+						"chaincodes",
+						"tacechain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "query with transaction ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"fcn\":\"GetAssetByTransactionID\",\n\"args\":[\"00028\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/channels/mychannel/chaincodes/tacechain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"channels",
+						"mychannel",
+						"chaincodes",
+						"tacechain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "query with transaction ID private date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/channels/mychannel/chaincodes/tacechain?fcn=GetAssetPrivateDetailsByTransactionID&args=[\"Org3MSPPrivateCollection\",\"00029\"]&=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"channels",
+						"mychannel",
+						"chaincodes",
+						"tacechain"
+					],
+					"query": [
+						{
+							"key": "fcn",
+							"value": "GetAssetPrivateDetailsByTransactionID"
+						},
+						{
+							"key": "args",
+							"value": "[\"Org3MSPPrivateCollection\",\"00029\"]"
+						},
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "asset private data collection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/channels/mychannel/chaincodes/tacechain?fcn=GetAssetPrivateDetailsByTransactionID&args=[\"Org1MSPPrivateCollection\",\"00058\"]&=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"channels",
+						"mychannel",
+						"chaincodes",
+						"tacechain"
+					],
+					"query": [
+						{
+							"key": "fcn",
+							"value": "GetAssetPrivateDetailsByTransactionID"
+						},
+						{
+							"key": "args",
+							"value": "[\"Org1MSPPrivateCollection\",\"00058\"]"
+						},
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "query with transaction ID private date Copy 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/channels/mychannel/chaincodes/tacechain?fcn=GetAssetPrivateDetailsByTransactionID&args=[\"Org3MSPPrivateCollection\",\"00029\"]&=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"channels",
+						"mychannel",
+						"chaincodes",
+						"tacechain"
+					],
+					"query": [
+						{
+							"key": "fcn",
+							"value": "GetAssetPrivateDetailsByTransactionID"
+						},
+						{
+							"key": "args",
+							"value": "[\"Org3MSPPrivateCollection\",\"00029\"]"
+						},
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDM3NTI4OTQsInVzZXJuYW1lIjoia3Jpc2huYSIsIm9yZ05hbWUiOiJPcmczIiwiaWF0IjoxNjQzNzE2ODk0fQ.fmWlANsBLoaM1RmAExyutNsCWBHbFll9L9qbyKLOPaI",
+			"type": "default"
+		}
+	]
+}
