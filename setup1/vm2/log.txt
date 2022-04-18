@@ -1,0 +1,4 @@
+Installed chaincodes on peer:
+Package ID: tracechain_1:5b817941071b393e2bf250a99ed3653a5f436d9092e8efe1d553cc07a247a524, Label: tracechain_1
+Package ID: tracechain_2:769d0ae1ae69915d53cd77d14c5c40682a601fa0bd5f15b465abbc1fd6284cb2, Label: tracechain_2
+Package ID: tracechain_3:35a4cf46dee1c4d23b035f90021c781f3437d00c93aae9ba1e04f521aeb5b484, Label: tracechain_3
