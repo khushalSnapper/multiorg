@@ -1,0 +1,23 @@
+version: "2.1"
+
+networks:
+  test:
+
+services:
+  apiprivatesdk:
+    image: apiprivatesdk:1.0
+    build: .
+    networks:
+      - test
+    extra_hosts:
+      - "peer0.org1.example.com: 20.221.240.130"
+      - "peer1.org1.example.com: 20.221.240.130"
+      - "peer0.org2.example.com: 13.235.241.13"
+      - "peer1.org2.example.com: 13.235.241.13"
+      - "peer0.org3.example.com: 40.77.69.252"
+      - "peer1.org3.example.com: 40.77.69.252"
+      - "orderer.example.com:20.221.224.199"
+      - "orderer2.example.com:20.221.224.199"
+      - "orderer3.example.com:20.221.224.199"
+    ports:
+      - 4000:4000

@@ -1,0 +1,2 @@
+Installed chaincodes on peer:
+Package ID: tracechain_1:7097e7163b0babc8b0359d05b603655450781c58bc91ae47ca99247755d70377, Label: tracechain_1

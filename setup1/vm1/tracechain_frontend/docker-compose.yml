@@ -1,0 +1,12 @@
+version: "2.1"
+
+networks:
+  test:
+
+services:
+  frontend:
+    image: knagware9/tracechain-frontend:25.0
+    networks:
+      - test
+    ports:
+      - 5000:80
